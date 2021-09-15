@@ -16,7 +16,7 @@ class _ForgotScreen extends State<ForgotScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          "Forgotten Screen !",
+          "Reset password",
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Color(0xff2E001F),
@@ -51,19 +51,19 @@ class _ForgotScreen extends State<ForgotScreen> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide:
-                                BorderSide(color: Color(0xff2E001F), width: 1)),
+                                BorderSide(color: Color(0xfff3283c), width: 1)),
                         disabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide:
-                                BorderSide(color: Color(0xff2E001F), width: 1)),
+                                BorderSide(color: Colors.black, width: 1)),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide:
-                                BorderSide(color: Color(0xff2E001F), width: 1)),
+                                BorderSide(color: Colors.black, width: 1)),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide:
-                                BorderSide(color: Color(0xff2E001F), width: 1)),
+                                BorderSide(color:Color(0xfff3283c), width: 1)),
                       ),
                     ),
                   ),
@@ -77,7 +77,7 @@ class _ForgotScreen extends State<ForgotScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      color: Color(0xff2E001F),
+                      color: Color(0xfff3283c),
                       child: Text(
                         "Send Email ",
                         style: TextStyle(

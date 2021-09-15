@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_mahdi/Pages/ProfilePage.dart';
 import 'LogIn.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -13,7 +14,10 @@ class _SignUpScreen extends State<SignUpScreen> {
   String Idu;
   var _formKey = GlobalKey<FormState>();
   final TextEditingController email = TextEditingController();
-  final TextEditingController userName = TextEditingController();
+  final TextEditingController FirstName = TextEditingController();
+    final TextEditingController LastName = TextEditingController();
+  final TextEditingController ZipCode = TextEditingController();
+
   final TextEditingController phoneNumber = TextEditingController();
   final TextEditingController password = TextEditingController();
   final TextEditingController address = TextEditingController();
@@ -39,16 +43,13 @@ class _SignUpScreen extends State<SignUpScreen> {
                       height: 50,
                     ),
                     Text(
-                      "Sign Up",
+                      "Create new account",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 35),
                     ),
-                    Text(
-                      "Welcom to our store",
-                      style: TextStyle(color: Colors.white),
-                    )
+                   
                   ],
                 ),
               ),
@@ -67,13 +68,13 @@ class _SignUpScreen extends State<SignUpScreen> {
                     if (value.isEmpty) {
                       return "Please enter user name";
                     } else {
-                      userName.text = value;
+                     FirstName.text = value;
                     }
                     return null;
                   },
                   style: TextStyle(color: Colors.black),
                   decoration: InputDecoration(
-                    labelText: "User Name",
+                    labelText: "First Name",
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: BorderSide(color: Colors.black, width: 1)),
@@ -91,6 +92,109 @@ class _SignUpScreen extends State<SignUpScreen> {
               ),
             ),
             Theme(
+              data: ThemeData(hintColor: Colors.grey[500]),
+              child: Padding(
+                padding: EdgeInsets.only(top: 50, right: 20, left: 20),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return "Please enter user name";
+                    } else {
+                     FirstName.text = value;
+                    }
+                    return null;
+                  },
+                  style: TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    labelText: "Last Name",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                    disabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                  ),
+                ),
+              ),
+            ),
+            Row(
+                children: [
+                  Theme(
+              data: ThemeData(hintColor: Colors.grey[500]),
+              child: Padding(
+                padding: EdgeInsets.only(top: 50, ),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return "Please enter your adress";
+                    } else {
+                      address.text = value;
+                    }
+                    return null;
+                  },
+                  style: TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    labelText: "Address",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                    disabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                  ),
+                ),
+              ),
+            ),
+            
+
+            Theme(
+              data: ThemeData(hintColor: Colors.grey[500]),
+              child: Padding(
+                padding: EdgeInsets.only(top: 50, ),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return "Please enter zip code";
+                    } else {
+                      ZipCode.text = value;
+                    }
+                    return null;
+                  },
+                  style: TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    labelText: "Zip code",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                    disabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.black, width: 1)),
+                  ),
+                ),
+              ),
+            ),
+                ],
+            ),
+            
+            Theme(
               data: ThemeData(hintColor: Colors.grey),
               child: Padding(
                 padding: EdgeInsets.only(top: 10, right: 20, left: 20),
@@ -104,6 +208,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                     }
                     return null;
                   },
+                  
                   style: TextStyle(color: Colors.black),
                   decoration: InputDecoration(
                     labelText: "Email",
@@ -119,7 +224,11 @@ class _SignUpScreen extends State<SignUpScreen> {
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: BorderSide(color: Colors.black, width: 1)),
+                icon: Icon(
+                  Icons.email
+                )
                   ),
+                  
                 ),
               ),
             ),
@@ -155,6 +264,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: BorderSide(color: Colors.black, width: 1)),
+                 icon: Icon(Icons.lock)
                   ),
                 ),
               ),
@@ -191,38 +301,6 @@ class _SignUpScreen extends State<SignUpScreen> {
                 ),
               ),
             ),
-            Theme(
-              data: ThemeData(hintColor: Colors.grey[500]),
-              child: Padding(
-                padding: EdgeInsets.only(top: 50, right: 20, left: 20),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return "Please enter your adress";
-                    } else {
-                      address.text = value;
-                    }
-                    return null;
-                  },
-                  style: TextStyle(color: Colors.black),
-                  decoration: InputDecoration(
-                    labelText: "Address",
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.black, width: 1)),
-                    disabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.black, width: 1)),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.black, width: 1)),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.black, width: 1)),
-                  ),
-                ),
-              ),
-            ),
             SizedBox(
               height: 20,
             ),
@@ -230,9 +308,9 @@ class _SignUpScreen extends State<SignUpScreen> {
                 padding: EdgeInsets.only(left: 20, right: 20),
                 child: RaisedButton(
                   onPressed: () {
-                   /* if (_formKey.currentState.validate()) {
-                      register();
-                    }*/
+                     Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (BuildContext context) => ProfileScreen()));
+                   
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
